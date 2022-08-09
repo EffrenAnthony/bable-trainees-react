@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <Fragment>
       <header>
-        <div class="header">
-          <div class="header__left">
+        <div className="header">
+          <div className="header__left">
             <h1>Algun titulo</h1>
             <button>Ver peli</button>
           </div>

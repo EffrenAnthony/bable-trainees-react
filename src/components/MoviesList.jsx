@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { _videosService } from '../services/videosService';
+import { movies as moviesList } from '../mocks/movies';
 import Movie from './Movie';
 
 const MoviesList = () => {
@@ -7,16 +7,17 @@ const MoviesList = () => {
 
   useEffect(() => {
     async function getMovies() {
-      const movies = await _videosService.getVideosAsyncAwait(20)
-      setMovies(movies)
+      // const movies = await _videosService.getVideosAsyncAwait(20)
+      const moviesMock = moviesList.videos
+      setMovies(moviesMock)
     }
     getMovies()
-  }, [])
+  }, [movies.videos])
   return (
     <>
       {
-        movies.map(movie => (
-          <Movie {...movie} />
+        movies.map((movie, key) => (
+          <Movie {...movie} key={key} />
         ))
       }
     </>

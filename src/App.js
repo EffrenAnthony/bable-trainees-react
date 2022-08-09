@@ -1,31 +1,14 @@
-import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './assets/styles/App.scss';
-import Header from './components/Header';
-import MoviesList from './components/MoviesList';
-import MenuBar from './shared/MenuBar';
+import ContactUs from './containers/ContactUs';
+import Main from './containers/Main';
+import MovieDetail from './containers/MovieDetail';
+import Profile from './containers/Profile';
+import LayoutMain from './layouts/LayoutMain';
 
-const implIngles = {
-  menu: {
-    inicio: 'Home',
-    contactanos: 'Contact us',
-    perfil: 'Profile'
-  }
-}
-const implEsp = {
-  menu: {
-    inicio: 'Inicio',
-    contactanos: 'Contactanos',
-    perfil: 'Perfil'
-  }
-}
 
 function App() {
-  const [lang, setLang] = useState('EN')
-  const [impl, setImpl] = useState(implIngles)
-  function toggleLang () {
-    setLang(lang === 'EN' ? 'ES' : 'EN')
-    setImpl(lang === 'EN' ? implIngles : implEsp)
-  }
+
   // console.log('render')
   // const [amount, setAmount] = useState(0)
   // const [amount2, setAmount2] = useState(10)
@@ -46,23 +29,14 @@ function App() {
       contactanos={impl.menu.contactanos}
       perfil={impl.menu.perfil}
       /> */}
-      <MenuBar toggleLang={toggleLang} lang={lang} {...impl.menu} />
-      <Header></Header>
-      <section class="movies-type">
-        <h2 class="movies-type__title">Documentales recientes</h2>
-      </section>
-      <section class="movies-collection">      
-      <MoviesList />
-      </section>
-        <section class="movies-type">
-        <h2 class="movies-type__title">Ciencia y ficción</h2>
-      </section>
-      <section class="movies-collection">      
-        <MoviesList />
-      </section>
-      {/* <button onClick={incrementar}>Increase</button>
-      <p style={{ color: 'white' }}>{amount}</p>
-      <p style={{ color: 'white' }}>{amount + amount2}</p> */}
+      <LayoutMain>
+        <Routes>
+          <Route path='/' element={<Main />}/>
+          <Route path='/contact' element={<ContactUs/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/movie/:idMovie' element={<MovieDetail/>}/>
+        </Routes>
+      </LayoutMain>
     </div>
   );
 }

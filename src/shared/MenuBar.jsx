@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MenuBar = ({ inicio, contactanos, perfil, lang, toggleLang }) => {
   return (
@@ -12,9 +13,9 @@ const MenuBar = ({ inicio, contactanos, perfil, lang, toggleLang }) => {
             <li className="navbar__item">
               <button onClick={toggleLang}>{lang === 'EN' ? 'EN' : 'ES'}</button>
             </li>
-            <li className="navbar__item">{inicio}</li>
-            <li className="navbar__item">{contactanos}</li>
-            <li className="navbar__item">{perfil}</li>
+            <Link className="navbar__item" to='/'>{inicio}</Link>
+            <Link className="navbar__item" to='/contact'>{contactanos}</Link>
+            <Link className="navbar__item" to='/profile'>{perfil}</Link>
           </ul>
         </nav>
       </menu>

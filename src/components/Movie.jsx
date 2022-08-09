@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Movie = ({ id, image, user: { name }, duration }) => {
   return (
@@ -14,7 +15,9 @@ const Movie = ({ id, image, user: { name }, duration }) => {
         <p className="movies-collection__card--info-duration" style={{ marginBottom: '0px' }}>{duration} seg</p>
         <div className="movies-collection__card--info-actions">
           <a href="#1" target='_blank' data-bs-toggle="modal" data-bs-target={`#modal${id}`}><i className="fa-solid fa-play"></i></a>
-          <i className="fa-solid fa-thumbs-up"></i>
+          <Link to={`/movie/${id}`}>
+            <i className="fa-solid fa-thumbs-up"></i>
+          </Link>
         </div>
       </div>
     </div>

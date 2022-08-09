@@ -2,8 +2,24 @@
 import axios from 'axios'
 
 const BASE_URL = 'https://api.pexels.com'
-
+// https://api.pexels.com/videos/videos/2499611
 export const _videosService = {
+  getSingleVideo: async (id) => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/videos/videos/${id}`
+        , {
+          headers: {
+            "Authorization": process.env.REACT_APP_PEXELS_API_KEY
+          }
+        }
+      )
+      const video = response.data
+      return video
+    } catch (e) {
+      console.error(e)
+    }
+  },
   getVideosAsyncAwait: async (videosQuantity) => {
     try {
       const response = await axios.get(
