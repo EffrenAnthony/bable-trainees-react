@@ -14,6 +14,7 @@ const LayoutMain = ({ children }) => {
     <div>
       <MenuBar toggleLang={toggleLang} lang={lang} {...impl.menu} />
       {children}
+      {/* Footer */}
     </div>
   );
 };
