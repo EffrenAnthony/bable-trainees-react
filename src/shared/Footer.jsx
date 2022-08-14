@@ -1,3 +1,4 @@
+import React from 'react';
 const Footer = ()=>{
     return(
         <>
@@ -6,7 +7,7 @@ const Footer = ()=>{
                 <div className="footer__group1__box">
                     <figure>
                         <a href="#">
-                            <img alt="logo-footer" src="https://static.rfstat.com/renderforest/images/v2/landing-pics/logo-animation/banner-video.png" alt="logo"/>
+                            <img alt="logo-footer" src="https://static.rfstat.com/renderforest/images/v2/landing-pics/logo-animation/banner-video.png"/>
                         </a>
                     </figure>
                 </div>

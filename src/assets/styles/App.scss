@@ -14,7 +14,7 @@ $height: 220px;
 
 .navbar {
   padding: 10px 15px;
-  background-color: rgb(36, 33, 33);
+  background-color: #111;
   display: flex;
   justify-content:space-between;
   &__logo {
@@ -55,8 +55,7 @@ $height: 220px;
   }
 }
 
-.movies-collection{
-  
+.movies-collection{  
   overflow: scroll;
   position: relative;
   min-height: $height;
