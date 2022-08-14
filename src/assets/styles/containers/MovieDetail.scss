@@ -1,0 +1,17 @@
+.video-detail-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{        
+        margin: 10px 10px;
+    }
+    button{
+        background-color: rgb(78, 5, 114);
+        border: none;
+        margin: 10px 10px;
+        color: white;
+    }
+    video{
+        margin: 10px 10px;
+    }
+}
